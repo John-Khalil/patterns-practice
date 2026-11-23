@@ -2,6 +2,7 @@ import notifications.NotificationFactory;
 import notifications.EmailNotificationFactory;
 import notifications.SMSNotificationFactory;
 import singleton.DatabaseConnection;
+import builders.Computer;
 
 
 public class Main {
@@ -29,8 +30,13 @@ public class Main {
         // System.out.println(db1==db2);
 
         //^ Builder
+        Computer pc = new Computer.Builder("I7",32)
+                            .storage(1000)
+                            .gpu("RTX")
+                            .operatingSystem("WIN")
+                            .build();
+        pc.displaySpecs();
 
-        
 
     }
 }

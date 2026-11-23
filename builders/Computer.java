@@ -5,7 +5,7 @@ public class Computer{
   private final int ram;
 
   private final int storage;
-  private final Sting gpu;
+  private final String gpu;
   private final String operatingSystem;
 
 
@@ -29,9 +29,9 @@ public class Computer{
     private final String cpu;
     private final int ram;
 
-    private final int storage = 256;
-    private final Sting gpu = "Integrated Graphics";
-    private final String operatingSystem = "No OS";
+    private int storage = 256;
+    private String gpu = "Integrated Graphics";
+    private String operatingSystem = "No OS";
 
     public Builder(String cpu, int ram){
       this.cpu=cpu;
