@@ -3,6 +3,7 @@ import notifications.EmailNotificationFactory;
 import notifications.SMSNotificationFactory;
 import singleton.DatabaseConnection;
 import builders.Computer;
+import adapter.*;
 
 
 public class Main {
@@ -30,12 +31,17 @@ public class Main {
         // System.out.println(db1==db2);
 
         //^ Builder
-        Computer pc = new Computer.Builder("I7",32)
-                            .storage(1000)
-                            .gpu("RTX")
-                            .operatingSystem("WIN")
-                            .build();
-        pc.displaySpecs();
+        // Computer pc = new Computer.Builder("I7",32)
+        //                     .storage(1000)
+        //                     .gpu("RTX")
+        //                     .operatingSystem("WIN")
+        //                     .build();
+        // pc.displaySpecs();
+
+        //^ adapter
+        PaymentProcessor processor=new PayPalAdapter(new PayPal());
+
+        processor.pay(500);
 
 
     }
